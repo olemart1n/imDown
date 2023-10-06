@@ -1,4 +1,4 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Mandali&display=swap");
 
 /**
  * WHAT IS THIS FILE?
@@ -7,29 +7,76 @@
  * the styles in here will be applied to the Document, without any sort of CSS scoping.
  *
  */
+
+:root {
+    --text-dark: #1e1e1e;
+    --text-blue: #7597a5;
+    --text-white: #ddeaef;
+
+    --bg-dark: #151934;
+    --bg-turk: #add3cf;
+    --bg-success: #aeecc4;
+    --bg-error: #f68f82;
+    --bg-white: rgb(255, 255, 255);
+
+    --shadow-blue: rgba(117, 151, 165, 0.3);
+    --shadow-black: rgba(47, 58, 62, 0.3);
+
+    --font-xsm: 0.4rem;
+    --font-sm: 0.8rem;
+    --font-md: 1rem;
+    --font-lg: 1.5rem;
+    --font-xlg: 1.5rem;
+
+    --media-sm: 480px;
+    --media-md: 760px;
+    --media-lg: 1020px;
+}
 html {
-  -webkit-text-size-adjust: 100%;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  font-family:
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    "Noto Color Emoji";
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    font-family:
+        "Mandali",
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        "Noto Sans",
+        sans-serif,
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+}
+body {
+    padding: 0;
+    margin: 0;
+    line-height: inherit;
+    display: grid;
+    height: 100dvh;
+    grid-template-rows: auto 1fr auto;
 }
 
-body {
-  padding: 0;
-  line-height: inherit;
+header {
+    color: var(--text-white);
+    background-color: var(--bg-turk);
+}
+main {
+    color: var(--text-dark);
+}
+footer {
+    color: var(--text-white);
+    background-color: var(--bg-dark);
 }
