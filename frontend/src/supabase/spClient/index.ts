@@ -2,7 +2,7 @@ import { createServerClient, type SupabaseClient } from "supabase-auth-helpers-q
 import { type RequestEvent, type RequestEventAction } from "@builder.io/qwik-city";
 import { type SignInWithPasswordCredentials } from "@supabase/supabase-js";
 
-class SupabaseClass {
+class SpServerClass {
     supabase: SupabaseClient;
     constructor(reqEv: RequestEvent | RequestEventAction) {
         this.supabase = createServerClient(
@@ -14,6 +14,10 @@ class SupabaseClass {
 
     async sign_in(credentials: SignInWithPasswordCredentials) {
         const { error, data } = await this.supabase.auth.signInWithPassword(credentials);
+        return { error: error, data: data };
+    }
+    async sign_up(credentials: SignInWithPasswordCredentials) {
+        const { error, data } = await this.supabase.auth.signUp(credentials);
         return { error: error, data: data };
     }
 
@@ -49,4 +53,4 @@ class SupabaseClass {
     }
 }
 
-export default SupabaseClass;
+export default SpServerClass;

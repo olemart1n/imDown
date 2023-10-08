@@ -1,11 +1,29 @@
-import { component$, Slot } from "@builder.io/qwik";
+import {
+    component$,
+    Slot,
+    useContextProvider,
+    useStore,
+    useVisibleTask$,
+    useContext,
+} from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
-import { Header } from "~/components/layoutComponents/header";
-import { Footer } from "~/components/layoutComponents/footer";
+import { Nav } from "~/components/nav";
+import { Footer } from "~/components/footer";
+import { appContext, type App } from "~/context/appState";
 export default component$(() => {
+    const appState: App = useStore({ navIconLoading: false, user: null });
+    useContextProvider(appContext, appState);
+    const app = useContext(appContext);
+    useVisibleTask$(() => {
+        if (localStorage.getItem("user") && !app.user) {
+            app.user = JSON.parse(localStorage.getItem("user") as string);
+        }
+    });
     return (
         <>
-            <Header />
+            <header>
+                <Nav />
+            </header>
             <main>
                 <Slot />
             </main>

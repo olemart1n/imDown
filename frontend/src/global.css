@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Mandali&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Mandali&display=swap");
 
 /**
  * WHAT IS THIS FILE?
@@ -9,24 +10,26 @@
  */
 
 :root {
-    --text-dark: #1e1e1e;
-    --text-blue: #7597a5;
-    --text-white: #ddeaef;
-
-    --bg-dark: #151934;
-    --bg-turk: #add3cf;
-    --bg-success: #aeecc4;
-    --bg-error: #f68f82;
-    --bg-white: rgb(255, 255, 255);
+    --dark: #151934;
+    --turk: #add3cf;
+    --success: #aeecc4;
+    --error: #f68f82;
+    --white: rgb(255, 255, 255);
+    --green: #99c8ce;
+    --green-light: #deeeef;
+    --blue: #183c5c;
+    --blue-light: #2e72ac;
 
     --shadow-blue: rgba(117, 151, 165, 0.3);
     --shadow-black: rgba(47, 58, 62, 0.3);
+    --shadow-white: rgba(218, 235, 241, 0.3);
 
     --font-xsm: 0.4rem;
     --font-sm: 0.8rem;
-    --font-md: 1rem;
-    --font-lg: 1.5rem;
-    --font-xlg: 1.5rem;
+    --font-md: 1.1rem;
+    --font-md-plus: 1.5rem;
+    --font-lg: 1.8rem;
+    --font-xlg: 3rem;
 
     --media-sm: 480px;
     --media-md: 760px;
@@ -38,13 +41,13 @@ html {
     -o-tab-size: 4;
     tab-size: 4;
     font-family:
-        "Mandali",
+        "Inter",
+        Roboto,
         ui-sans-serif,
         system-ui,
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
-        Roboto,
         "Helvetica Neue",
         Arial,
         "Noto Sans",
@@ -66,17 +69,17 @@ body {
     line-height: inherit;
     display: grid;
     height: 100dvh;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: 10% 1fr auto;
 }
 
 header {
-    color: var(--text-white);
-    background-color: var(--bg-turk);
+    background-color: var(--green-light);
+    color: var(--dark);
 }
 main {
-    color: var(--text-dark);
+    color: var(--dark);
 }
 footer {
-    color: var(--text-white);
-    background-color: var(--bg-dark);
+    color: var(--white);
+    background-color: var(--dark);
 }

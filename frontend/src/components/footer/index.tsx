@@ -4,9 +4,7 @@ export const Footer = component$(() => {
     useStyles$(styles);
     return (
         <footer>
-            <p>
-                <b>Lagd med ♡ av oss i MedPåDet</b>
-            </p>
+            <p>Lagd med ♡ av oss i MedPåDet</p>
         </footer>
     );
 });
